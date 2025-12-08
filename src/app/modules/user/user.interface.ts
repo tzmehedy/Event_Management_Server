@@ -1,0 +1,23 @@
+import { Types } from "mongoose";
+
+export interface IAuthProviders{
+    providerId: string,
+    providerName: string
+}
+
+export enum IRole{
+    ADMIN = "ADMIN",
+    HOST = "HOST",
+    USER = "USER"
+}
+export interface IUser{
+    _id?: Types.ObjectId,
+    name: string,
+    email: string,
+    password?:string,
+    auths: IAuthProviders[],
+    role: IRole
+    phone?: string,
+    picture?: string,
+    isBlocked: boolean
+}

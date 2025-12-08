@@ -1,14 +1,14 @@
 import { Server } from "http";
 import { app } from "./app";
+import { envVars } from "./app/config/env";
+import mongoose from "mongoose";
 
 let server: Server;
 
-
-
-const startServer = () => {
+const startServer = async () => {
   try {
-    // mongoose.connect(envVars.DATABASE_URL)
-    // console.log("The mongodb is connected");
+    await mongoose.connect(envVars.DATABASE_URL);
+    console.log("The mongodb is connected");
     server = app.listen(5000, () => {
       console.log(`The server is running on the port of 5000`);
     });
