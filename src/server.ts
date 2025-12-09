@@ -3,6 +3,7 @@ import { app } from "./app";
 import { envVars } from "./app/config/env";
 import mongoose from "mongoose";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 let server: Server;
 
 const startServer = async () => {
