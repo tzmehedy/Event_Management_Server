@@ -26,6 +26,23 @@ const requestBecomeHost = catchAsync(async(req:Request, res:Response)=>{
     })
 })
 
+
+
+const updateHostRole = catchAsync(async(req: Request, res:Response) =>{
+    const hostId = req.params.id 
+    const {approval_Status} = req.body 
+
+    const result = await hostServices.updateHostRole(hostId, approval_Status)
+
+    sendResponse(res, {
+        success: true,
+        statusCode: httpStatusCode.OK,
+        message: `The request is ${result.approval_Status}`,
+        data: result
+    })
+})
+
 export  const HostControllers = {
-    requestBecomeHost
+    requestBecomeHost,
+    updateHostRole
 }
