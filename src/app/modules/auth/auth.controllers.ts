@@ -3,11 +3,15 @@ import { Request, Response } from "express";
 import { catchAsync } from "../../utils/catchAsync";
 import { sendResponse } from "../../utils/sendResponse";
 import { authServices } from './auth.services';
+import { setCookies } from '../../utils/setCookies';
 
 const credentialsLogin = catchAsync(
   async (req: Request, res: Response) => {
 
     const loginInfo = await authServices.credentialsLogin(req.body);
+    
+    await setCookies(res, loginInfo.userTokens)
+
     sendResponse(res, {
       statusCode: httpStatusCode.OK,
       success: true,
