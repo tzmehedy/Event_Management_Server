@@ -15,6 +15,12 @@ interface IEnvConfig {
   ADMIN_PHONE: string;
   ADMIN_NAME: string;
   ADMIN_LOCATION: string;
+
+  CLOUDINARY: {
+    CLOUDINARY_NAME : string;
+    CLOUDINARY_API_KEY : string;
+    CLOUDINARY_API_SECRET : string;
+  }
 }
 
 const loadEnvVars = ():IEnvConfig =>{
@@ -30,7 +36,10 @@ const loadEnvVars = ():IEnvConfig =>{
       "ADMIN_PASS",
       "ADMIN_PHONE",
       "ADMIN_NAME",
-      "ADMIN_LOCATION"
+      "ADMIN_LOCATION",
+      "CLOUDINARY_NAME",
+      "CLOUDINARY_API_KEY",
+      "CLOUDINARY_API_SECRET",
     ];
 
     requiredEnvVar.forEach(key=>{
@@ -51,7 +60,13 @@ const loadEnvVars = ():IEnvConfig =>{
       ADMIN_PASS: process.env.ADMIN_PASS as string,
       ADMIN_PHONE: process.env.ADMIN_PHONE as string,
       ADMIN_NAME: process.env.ADMIN_NAME as string,
-      ADMIN_LOCATION: process.env.ADMIN_LOCATION as string
+      ADMIN_LOCATION: process.env.ADMIN_LOCATION as string,
+      CLOUDINARY: {
+        CLOUDINARY_NAME: process.env.CLOUDINARY_NAME as string,
+        CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY as string,
+        CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET as string,
+      }
+
     };
 }
 
