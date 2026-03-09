@@ -34,6 +34,7 @@ const loadEnvVars = () => {
         "SSL_COMMERZ_BACKEND_SUCCESS_URL",
         "SSL_COMMERZ_BACKEND_CANCEL_URL",
         "SSL_COMMERZ_BACKEND_FAILED_URL",
+        "OPENAI_API_KEY"
     ];
     requiredEnvVar.forEach(key => {
         if (!process.env[key]) {
@@ -79,6 +80,7 @@ const loadEnvVars = () => {
             SSL_COMMERZ_BACKEND_FAILED_URL: process.env
                 .SSL_COMMERZ_BACKEND_FAILED_URL,
         },
+        OPENAI_API_KEY: process.env.OPENAI_API_KEY,
     };
 };
 exports.envVars = loadEnvVars();

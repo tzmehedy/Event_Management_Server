@@ -9,6 +9,7 @@ const enevt_routes_1 = require("../modules/event/enevt.routes");
 const bookings_routes_1 = require("../modules/bookings/bookings.routes");
 const payment_routes_1 = require("../modules/payment/payment.routes");
 const stats_routes_1 = require("../modules/stats/stats.routes");
+const chatbot_routes_1 = require("../modules/chatbot/chatbot.routes");
 exports.router = (0, express_1.Router)();
 const moduleRoutes = [
     {
@@ -38,6 +39,10 @@ const moduleRoutes = [
     {
         path: "/stats",
         route: stats_routes_1.statsRoutes
+    },
+    {
+        path: "/chatbot",
+        route: chatbot_routes_1.chatbotRoutes
     }
 ];
 moduleRoutes.forEach(route => exports.router.use(route.path, route.route));
