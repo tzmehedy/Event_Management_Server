@@ -6,7 +6,6 @@ import { eventRoutes } from "../modules/event/enevt.routes";
 import { bookingRoutes } from "../modules/bookings/bookings.routes";
 import { paymentRoutes } from "../modules/payment/payment.routes";
 import { statsRoutes } from "../modules/stats/stats.routes";
-import { chatbotRoutes } from "../modules/chatbot/chatbot.routes";
 
 
 export const router = Router()
@@ -40,10 +39,6 @@ const moduleRoutes = [
         path: "/stats",
         route: statsRoutes
     },
-    {
-        path: "/chatbot",
-        route: chatbotRoutes
-    }
 ]
 
 moduleRoutes.forEach(route=> router.use(route.path, route.route))

@@ -113,8 +113,7 @@ const loadEnvVars = ():IEnvConfig =>{
         SSL_COMMERZ_BACKEND_FAILED_URL: process.env
           .SSL_COMMERZ_BACKEND_FAILED_URL as string,
       },
-
-      OPENAI_API_KEY: process.env.OPENAI_API_KEY as string,
+      OPENAI_API_KEY: process.env.OPENAI_API_KEY as string
     };
 }
 
