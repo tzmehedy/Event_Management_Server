@@ -6,8 +6,10 @@ import { JwtPayload } from 'jsonwebtoken';
 import { User } from '../modules/user/user.model';
 
 export const checkAuth = (...AuthRole: string[]) => async(req:Request, res:Response, next:NextFunction)=>{
+    
     try {
         const accessToken = req.cookies.accessToken;
+       
         
         if(!accessToken){
             throw new AppError(

@@ -82,7 +82,7 @@ const createBookings = async (payload: Partial<IBooking>) => {
     await session.commitTransaction();
     await session.endSession();
 
-    
+   
  
     return {
       bookings: updatedBookingsInfo,

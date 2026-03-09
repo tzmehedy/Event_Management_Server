@@ -58,6 +58,7 @@ const createBookings = async (payload) => {
         const sslPayment = await sslCommerz_services_1.sslCommerzServices.initPayment(sslCommerzPayload);
         await session.commitTransaction();
         await session.endSession();
+        console.log(sslPayment.GatewayPageURL);
         return {
             bookings: updatedBookingsInfo,
             paymentUrl: sslPayment.GatewayPageURL
