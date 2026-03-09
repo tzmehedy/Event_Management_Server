@@ -33,7 +33,7 @@ interface IEnvConfig {
     SSL_COMMERZ_BACKEND_CANCEL_URL: string;
     SSL_COMMERZ_BACKEND_FAILED_URL: string;
   };
-  OPENAI_API_KEY: string;
+
 }
 
 const loadEnvVars = ():IEnvConfig =>{
@@ -64,7 +64,7 @@ const loadEnvVars = ():IEnvConfig =>{
       "SSL_COMMERZ_BACKEND_SUCCESS_URL",
       "SSL_COMMERZ_BACKEND_CANCEL_URL",
       "SSL_COMMERZ_BACKEND_FAILED_URL",
-      "OPENAI_API_KEY"
+     
     ];
 
     requiredEnvVar.forEach(key=>{
@@ -112,8 +112,7 @@ const loadEnvVars = ():IEnvConfig =>{
           .SSL_COMMERZ_BACKEND_CANCEL_URL as string,
         SSL_COMMERZ_BACKEND_FAILED_URL: process.env
           .SSL_COMMERZ_BACKEND_FAILED_URL as string,
-      },
-      OPENAI_API_KEY: process.env.OPENAI_API_KEY as string
+      }
     };
 }
 
