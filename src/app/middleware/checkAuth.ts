@@ -9,8 +9,7 @@ export const checkAuth = (...AuthRole: string[]) => async(req:Request, res:Respo
     
     try {
         const accessToken = req.cookies.accessToken;
-       console.log(accessToken)
-        
+      
         if(!accessToken){
             throw new AppError(
               httpStatusCode.BAD_REQUEST,
